@@ -18,14 +18,13 @@ int randomizer()
 
 int main()
 {
-		int MAX =500;
+		int MAX =1000;
         
         while(MAX<10001)
         {
             srand(time(NULL));
             cout << "     MAX = "<< MAX << endl;
-            
-		    //double A[MAX][MAX], x[MAX], y[MAX];
+
             vector<vector<int>>A;
             vector<int> x;
             vector<int> y;
@@ -53,29 +52,25 @@ int main()
             int i , j;
             
             /* First pair of loops */
-            //t0=clock();
+         
             auto start = chrono::steady_clock::now();
             for ( i = 0; i < MAX ; i++)
                 for ( j = 0; j < MAX ; j++)
                     y[ i ] += A[i][j] * x[ j ];
-            //t1=clock();
+          
             auto end = chrono::steady_clock::now();
             cout << " First Pair of loops  = " << chrono::duration_cast<chrono::milliseconds>(end - start).count() << endl;
-            //double time = (double(t1-t0)/CLOCKS_PER_SEC);
-            //cout << "First Pair of loops - Execution Time: " << time << endl;
             /* Assign y = 0 */
-            
+    
             /* Second pair of loops */
-            //t2=clock();
+           
             auto start1 = chrono::steady_clock::now();
             for (j = 0; j < MAX ; j ++)
                 for (i = 0; i < MAX ; i ++)
                     y[i] += A[i][j]* x[j];
-            //t3=clock();
+          
             auto end1 = chrono::steady_clock::now();
             cout << " Second Pair of loops = " << chrono::duration_cast<chrono::milliseconds>(end1 - start1).count() << endl;
-            //time = (double(t3-t2)/CLOCKS_PER_SEC);
-            //cout << "Second Pair of loops - Execution Time: " << time << endl;
 
         MAX += 500;
         A.clear();
