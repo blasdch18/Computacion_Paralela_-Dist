@@ -192,7 +192,7 @@ int main(){
     A.fill(9);
     B.fill(9);
 /*
-    for(i=100 ; i<=800 ;){
+    for(i=800 ; i<=801 ;){
         Matrix<int> A(i,i);
         Matrix<int> B(i,i);
         t0=clock();
@@ -204,10 +204,11 @@ int main(){
         }
         double time = (double(t1-t0)/CLOCKS_PER_SEC);
         cout << "\t \t    Execution Normal Matr= " << A.getHeight() << "x" << A.getWidth() <<" Multiplication Time: " << time << endl;
-    }*/
- //   /*
+    }
+*/
+
     cout<< endl << endl;
-    for(i=100 ; i<=800 ;){
+    for(i=800 ; i<=801 ;){
 
         Matrix<int> A(i,i);
         Matrix<int> B(i,i);
@@ -223,7 +224,7 @@ int main(){
         cout << "\t  Execution Blocks Matr= " << A.getHeight() << "x" << A.getWidth() <<" Multiplication Time: " << time << endl;
     }
 
-//*/
+
     
 
 }
