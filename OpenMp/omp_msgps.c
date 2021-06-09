@@ -93,6 +93,7 @@ void Send_msg(struct queue_s* msg_queues[], int my_rank,
    int dest = random() % thread_count;
 #  pragma omp critical
    Enqueue(msg_queues[dest], my_rank, mesg);
+   printf("Thread %d > sent %d to %d\n", my_rank, mesg, dest);
 #  ifdef DEBUG
    printf("Thread %d > sent %d to %d\n", my_rank, mesg, dest);
 #  endif

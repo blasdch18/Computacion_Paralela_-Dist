@@ -98,6 +98,7 @@ void Send_msg(struct queue_s* msg_queues[], int my_rank,
    omp_set_lock(&q_p->lock);
    Enqueue(q_p, my_rank, mesg);
    omp_unset_lock(&q_p->lock);
+   printf("Thread %d > sent %d to %d\n", my_rank, mesg, dest);
 #  ifdef DEBUG
    printf("Thread %d > sent %d to %d\n", my_rank, mesg, dest);
 #  endif
